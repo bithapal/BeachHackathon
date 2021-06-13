@@ -21,9 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 import adapter.NavigationDrawerAdapter;
 
-/**
- * Created by User on 2/16/2017.
- */
 public class FragmentDrawer extends Fragment {
 
     public static int[] icons = null;

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Beachin</string>
-    <string name="title_activity_landing">Ohohotels</string>
+    <string name="title_activity_landing">Beachin</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
     <string-array name="nav_drawer_labels">
@@ -14,29 +14,12 @@
     <string name="title_activity_hotel_details">HotelDetails</string>
     <string name="title_activity_activity_booking">ActivityBooking</string>
     <string name="title_activity_city_details">CityDetails</string>
-    <string name="title_activity_full_screen_image">FullScreenImage</string>
     <string name="home">Home</string>
     <string name="topbeaches">Top Beaches</string>
     <string name="featured">Featured</string>
-    <string name="title_activity_more_about_location">MoreAboutLocation</string>
-    <string name="title_activity_login">LoginActivity</string>
     <string name="login">LOGIN</string>
     <string name="signup">SIGNUP</string>
-    <string name="title_activity_search_result">SearchResult</string>
-    <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_terms_and_conditions">TermsAndConditions</string>
     <string name="title_activity_write_review">WriteReview</string>
-    <string name="title_activity_write_areview_second">WriteAreviewSecond</string>
-    <string name="title_activity_full_image">FullImageActivity</string>
 
-    <string-array name="star_arrays">
-        <item>No Star</item>
-        <item>1 Star</item>
-        <item>2 Star</item>
-        <item>3 Star</item>
-        <item>4 Star</item>
-        <item>5 Star</item>
-        <item>Tourist enabled</item>
-    </string-array>
-    <string name="title_activity_activity_book_last">ActivityBookLast</string>
 </resources>

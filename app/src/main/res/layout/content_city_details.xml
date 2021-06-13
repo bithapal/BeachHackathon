@@ -1,145 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fillViewport="true"
-    android:id="@+id/svcitydetails"
-    android:layout_marginTop="?attr/actionBarSize">
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/verylightsilver"
-        android:layout_height="wrap_content">
+        android:background="@color/verylightsilver">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/ivMainCity"/>
-
-
-            </RelativeLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="3dp">
-            <RelativeLayout
+            android:layout_height="40dp">
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/white"
-
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/greenline"/>
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/white"
-                    android:layout_centerInParent="true">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="  Near By Hotels  "
-                        android:textColor="@android:color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"/>
-                </FrameLayout>
-            </RelativeLayout>
+                android:text="Beach Details"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/yellow"
+                android:textSize="22sp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/lightsilver"></LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lvNearHotels"></ListView>
-</LinearLayout>
+            android:background="@android:color/white"></LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="3dp">
-            <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_height="40dp">
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/white">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/greenline"/>
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/white"
-                    android:layout_centerInParent="true">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="  OverView  "
-                        android:textColor="@android:color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"/>
-                </FrameLayout>
-            </RelativeLayout>
+                android:text="BeachName:"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginBottom="30dp"
-            android:layout_height="wrap_content">
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/whitegraybackground"
+            android:layout_height="35dp">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvOverview"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="30dp"
-                android:text="fwff"/>
+                android:layout_height="match_parent"
+                android:id="@+id/tvBeachName"
+                android:text="Miami Beach"
+                android:paddingLeft="10dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+
+                ></TextView>
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_weight="0">
+            android:layout_height="40dp">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:id="@+id/tvLearnMore"
-                android:background="@color/yellow"
+                android:layout_height="match_parent"
+                android:text="Amenities:"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="KNOW MORE"
-                android:textColor="@android:color/white"
-                android:layout_alignParentBottom="true"
-                />
-        </RelativeLayout>
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/whitegraybackground"
+            android:layout_height="35dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tvamenities"
+                android:paddingLeft="10dp"
+                android:text="Pool, Shower, Sunbath"
+                android:background="@null"
+                android:gravity="center_vertical"
+
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Near by Hotels:"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/whitegraybackground"
+            android:layout_height="35dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tvhotels"
+                android:paddingLeft="10dp"
+                android:text="Raddison, American Stay"
+                android:background="@null"
+                android:gravity="center_vertical"
+
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Nearby Restaurants:"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/whitegraybackground"
+            android:layout_height="35dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:id="@+id/etrest"
+                android:text="PF Changs"
+
+                ></TextView>
+        </LinearLayout>
 
 
+    </LinearLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

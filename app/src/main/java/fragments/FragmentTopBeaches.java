@@ -28,12 +28,8 @@ import java.util.LinkedList;
 import Common.Constants;
 import Common.Helper;
 import adapter.AllItemsAdapter;
-import adapter.TopCitiesAdapter;
 import hacks.beachapp.HotelDetails;
 
-/**
- * Created by User on 3/2/2017.
- */
 public class FragmentTopBeaches extends Fragment {
     View view;
     ListView lvTopBeaches;

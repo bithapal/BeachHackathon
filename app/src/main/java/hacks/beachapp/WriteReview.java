@@ -43,59 +43,5 @@ public class WriteReview extends AppCompatActivity {
 
     }
 
-//    private void getgeneralitems() {
-//        final ProgressDialog dialog = new ProgressDialog(context);
-//        dialog.setMessage("Please wait...");
-//        dialog.setCancelable(false);
-//        dialog.show();
-//
-//        String url = "http://192.168.100.159/studentdemo/Login/login";
-//
-//        Map<String, String> postParam = new HashMap<String, String>();
-//        postParam.put("username", "bipana");
-//        postParam.put("password", "123456");
-////        ll.username="Bipana";
-////        ll.password="123455";
-//        JsonObjectRequest jobjectrequest = new JsonObjectRequest(Request.Method.POST, url
-//                , new JSONObject(postParam),
-//                new Response.Listener<JSONObject>() {
-//
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        if (dialog != null)
-//                            if (dialog.isShowing())
-//                                dialog.dismiss();
-//
-//                        Log.e("response", response.toString());
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Log.e("Url", error.toString() + "");
-//                        if (dialog != null)
-//                            if (dialog.isShowing())
-//                                dialog.dismiss();
-//
-//                    }
-//                }) {
-//
-//
-//            /**
-//             * Passing some request headers
-//             * */
-//            @Override
-//            public Map<String, String> getHeaders() throws AuthFailureError {
-//                HashMap<String, String> headers = new HashMap<String, String>();
-//                headers.put("Content-Type", "application/json; charset=utf-8");
-//                return headers;
-//            }
-//
-//        };
-//
-//        rq.add(jobjectrequest);
-//        //   AppController.getInstance().addToRequestQueue(jobjectrequest);
-//
-//    }
 
 }

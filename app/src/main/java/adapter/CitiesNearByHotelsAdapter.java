@@ -22,9 +22,6 @@ import java.util.LinkedList;
 
 import hacks.beachapp.HotelDetails;
 
-/**
- * Created by User on 8/21/2017.
- */
 public class CitiesNearByHotelsAdapter extends ArrayAdapter<HashMap<String, String>> implements Animation.AnimationListener {
 
     private final Activity context;
@@ -45,7 +42,7 @@ public class CitiesNearByHotelsAdapter extends ArrayAdapter<HashMap<String, Stri
         if (view == null) {
             LayoutInflater inflator = context.getLayoutInflater();
 
-            view = inflator.inflate(R.layout.home_list_item, null);
+            view = inflator.inflate(R.layout.beachdetails, null);
             final ViewHolder viewHolder = new ViewHolder();
             initAll(view, viewHolder);
             view.setTag(viewHolder);

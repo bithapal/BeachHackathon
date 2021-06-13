@@ -37,13 +37,11 @@ import java.util.List;
 import Common.Constants;
 import Common.Helper;
 import adapter.AllItemsAdapter;
+import hacks.beachapp.BeachDetails;
 import hacks.beachapp.HotelDetails;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
-/**
- * Created by User on 2/16/2017.
- */
 public class FragmentHome extends Fragment {
     View view;
     String start,end;
@@ -197,7 +195,7 @@ public class FragmentHome extends Fragment {
                             lvHomedata.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                 @Override
                                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                    Intent u=new Intent(context,HotelDetails.class);
+                                    Intent u=new Intent(context,BeachDetails.class);
                                     u.putExtra("beachId",Array_items_general.get(position).get("beachId"));
                                     Log.e("beachId",Array_items_general.get(position).get("beachId"));
                                     startActivity(u);

@@ -418,23 +418,7 @@ public class ActivityBooking extends AppCompatActivity implements View.OnClickLi
                                             dialog.dismiss();
                                     }
 
-                               Intent i=new Intent(ActivityBooking.this,ActivityBookLast.class);
-                                i.putExtra("HotelRecordId",HotelRecordId);
-                                i.putExtra("HotelRoomRecordId",HotelRoomRecordId);
-                                i.putExtra("selectedtimecheckin",selectedtimecheckin);
-                                i.putExtra("selectedtimecheckout",selectedtimecheckout);
-                                i.putExtra("noofadult",noofadult);
-                                i.putExtra("noofchild",noofchild);
-                                i.putExtra("noofrooms",noofrooms);
-                                i.putExtra("Name",Name);
-                                i.putExtra("Address",Address);
-                                i.putExtra("PhoneNo",PhoneNo);
-                                i.putExtra("EmailAddress",EmailAddress);
-                                i.putExtra("Rate",Rate);
-                                i.putExtra("ProfilePic",ProfilePic);
 
-
-                                startActivity(i);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

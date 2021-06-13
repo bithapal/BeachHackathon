@@ -24,10 +24,6 @@ import Common.Constants;
 import hacks.beachapp.BeachDetails;
 import hacks.beachapp.HotelDetails;
 
-
-/**
- * Created by User on 12/20/2016.
- */
 public class AllItemsAdapter extends ArrayAdapter<HashMap<String, String>> implements Animation.AnimationListener {
 
     private final Activity context;
@@ -65,7 +61,6 @@ public class AllItemsAdapter extends ArrayAdapter<HashMap<String, String>> imple
         viewHolder.tag = (TextView) view.findViewById(R.id.tag);
         viewHolder.ivhotel_home = (ImageView) view.findViewById(R.id.ivhotel_home);
         viewHolder.llview=(LinearLayout)view.findViewById(R.id.llview);
-        viewHolder.flgoDown=(FrameLayout)view.findViewById(R.id.flgoDown);
         viewHolder.tvtitle_home=(TextView)view.findViewById(R.id.tvtitle_home);
         viewHolder.tvLocation=(TextView)view.findViewById(R.id.tvLocation);
 
@@ -79,7 +74,7 @@ public class AllItemsAdapter extends ArrayAdapter<HashMap<String, String>> imple
             Picasso.with( context )
                     .load( image )
                     .error(R.drawable.noimage )
-                    .placeholder(R.drawable.graylogo )
+                    .placeholder(R.drawable.sea )
                     .into( holder.ivhotel_home );
 
                 holder.tvtitle_home.setText(allDataApparels.get(position).get("beachName"));
@@ -124,9 +119,6 @@ public class AllItemsAdapter extends ArrayAdapter<HashMap<String, String>> imple
         public TextView tag,tvtitle_home,tvLocation;
         ImageView ivhotel_home,newtag;
         LinearLayout llview;
-        FrameLayout flgoDown;
-//        TextView tvFlat,tvTypeOfRent,tvAddress,tvSize,tvInfo,tvAmount,tvViewDetails,tvViews,tvApplied;
-//        ImageView ivItemImage;
     }
 
 }

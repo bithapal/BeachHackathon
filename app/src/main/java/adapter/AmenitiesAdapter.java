@@ -12,9 +12,6 @@ import com.hacks.beachapp.beachapp.R;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-/**
- * Created by User on 8/18/2017.
- */
 public class AmenitiesAdapter extends ArrayAdapter<HashMap<String, String>> {
 
 private final Activity context;

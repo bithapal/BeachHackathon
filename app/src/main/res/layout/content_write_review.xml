@@ -91,7 +91,6 @@
         android:background="@drawable/whitegraybackground">
 
         <EditText
-            android:id="@+id/tvPlace"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -129,7 +128,6 @@
             android:stepSize="1"
             android:numStars="5"
             android:isIndicator="false"
-            android:id="@+id/ratingBar"
             android:theme="@style/RatingBar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
@@ -157,7 +155,6 @@
         android:background="@drawable/whitegraybackground">
 
         <EditText
-            android:id="@+id/tvReview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"

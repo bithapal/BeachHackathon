@@ -14,9 +14,7 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-/**
- * Created by User on 8/25/2017.
- */
+
 public class RecyclerImageBookingAdapter extends RecyclerView.Adapter<RecyclerImageBookingAdapter.ViewHolder> {
 
 

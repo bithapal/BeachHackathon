@@ -34,17 +34,16 @@ import Common.Constants;
 import Common.Helper;
 import adapter.CitiesNearByHotelsAdapter;
 
-public class BeachDetails extends AppCompatActivity implements View.OnClickListener {
+public class BeachDetails extends AppCompatActivity {
     Activity activity;
     Context context;
     LinkedList<HashMap<String, String>> Array_Images_Top;
-    TextView title, tvOverview,tvLearnMore;
-    ImageView ivbackdetails,ivMainCity;
-    ListView lvNearHotels;
+    TextView title;
+    ImageView ivbackdetails;
+//    ListView lvbeachdetails;
+public TextView tvBeachName,tvamenities,tvhotels,etrest;
     LinkedList<HashMap<String, String>> Array_details;
-    LinkedList<HashMap<String, String>> Array_city_hotels;
     String beachId;
-    ScrollView svcitydetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +55,10 @@ public class BeachDetails extends AppCompatActivity implements View.OnClickListe
         beachId=getIntent().getStringExtra("beachId");
         title = (TextView) toolbar.findViewById(R.id.title);
         ivbackdetails = (ImageView) toolbar.findViewById(R.id.ivbackdetails);
-        svcitydetails=(ScrollView)findViewById(R.id.svcitydetails);
-        svcitydetails.setFocusableInTouchMode(true);
-        svcitydetails.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
+        tvBeachName = (TextView) findViewById(R.id.tvBeachName);
+        tvamenities = (TextView) findViewById(R.id.tvamenities);
+        tvhotels = (TextView) findViewById(R.id.tvhotels);
+        etrest = (TextView) findViewById(R.id.etrest);
 
         ivbackdetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,25 +66,11 @@ public class BeachDetails extends AppCompatActivity implements View.OnClickListe
                 finish();
             }
         });
-        lvNearHotels = (ListView) findViewById(R.id.lvNearHotels);
-        tvOverview = (TextView) findViewById(R.id.tvOverview);
-        tvLearnMore=(TextView)findViewById(R.id.tvLearnMore);
-        tvLearnMore.setOnClickListener(this);
-        ivMainCity=(ImageView)findViewById(R.id.ivMainCity);
+//        lvbeachdetails = (ListView) findViewById(R.id.lvbeachdetails);
         getdetailsrooms();
     }
 
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tvLearnMore:
-                Intent i=new Intent(activity,MoreAboutLocation.class);
-                i.putExtra("CityRecordId",beachId);
-                startActivity(i);
-                break;
-        }
-    }
 
     private void getdetailsrooms() {
         final ProgressDialog dialog = new ProgressDialog(context);
@@ -99,82 +85,38 @@ public class BeachDetails extends AppCompatActivity implements View.OnClickListe
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Log.e("citydetailsurl", response + "");
+
                         try {
-                            JSONObject job=new JSONObject(response);
-                            String CityRecordId=job.getString("CityRecordId");
-                            String CityName=job.getString("CityName");
-                            String Details=job.getString("Details");
-                            String Photo=job.getString("Photo");
-                            title.setText("Welcome to "+CityName);
-                            tvOverview.setText(Html.fromHtml(Details));
-                            String img= "http://images.hacks.com//CITY/"+CityRecordId+"/"+Photo;
-                            Log.e("image",img);
-                            Picasso.with( context )
-                                    .load( "http://images.hacks.com//CITY/"+CityRecordId+"/"+Photo)
-                                    .error(R.drawable.noimage )
-                                    .placeholder(R.drawable.graylogo )
-                                    .into(ivMainCity );
-
-                            JSONArray jarr =job.getJSONArray("PopularLocationList");
-                            for (int i = 0; i < jarr.length(); i++) {
-
-                                JSONObject jobj = jarr.getJSONObject(i);
-                                if (dialog != null)
-                                    if (dialog.isShowing())
-                                        dialog.dismiss();
-                                HashMap<String, String> hm = new HashMap<String, String>();
-                                hm.put("CityRecordId", jobj.getString("CityRecordId"));
-                                hm.put("CityName",jobj.getString("CityName"));
-                                hm.put("NearByLocationId", jobj.getString("NearByLocationId"));
-                                hm.put("Title", jobj.getString("Title"));
-                                hm.put("Details", jobj.getString("Details"));
-                                hm.put("Photo", jobj.getString("Photo"));
-                                hm.put("Latitude", jobj.getString("Latitude"));
-                                hm.put("Longitude", jobj.getString("Longitude"));
+                            JSONObject jobj=new JSONObject(response);
+                            tvBeachName.setText(jobj.getString("beachName"));
+                            tvamenities.setText(jobj.getString("amenities"));
+                            tvhotels.setText(jobj.getString("nearbyHotels"));
+                            etrest.setText(jobj.getString("nearbyRestaurants"));
 
 
-                                Array_details.add(hm);
+//                                if (dialog != null)
+//                                    if (dialog.isShowing())
+//                                        dialog.dismiss();
+//                                HashMap<String, String> hm = new HashMap<String, String>();
+//                                hm.put("beachId", jobj.getString("beachId"));
+//                                hm.put("beachName", jobj.getString("beachName"));
+//                                hm.put("amenities", jobj.getString("amenities"));
+//                                hm.put("nearbyHotels", jobj.getString("nearbyHotels"));
+//                                hm.put("nearbyRestaurants", jobj.getString("nearbyRestaurants"));
+//
+//
+//                                Array_details.add(hm);
 
-                                if (dialog != null) {
-                                    if (dialog.isShowing())
-                                        dialog.dismiss();
-                                }
-//                                DetailsAdapter adap = new DetailsAdapter(activity, Array_details);
-//                                Helper.getListViewSize(lvDetailsdata);
-//                                lvDetailsdata.setAdapter(adap);
-                            }
-                            JSONArray jarray =job.getJSONArray("NearByHotelList");
-                            for (int i = 0; i < jarray.length(); i++) {
-
-                                JSONObject jobj = jarray.getJSONObject(i);
-                                if (dialog != null)
-                                    if (dialog.isShowing())
-                                        dialog.dismiss();
-                                HashMap<String, String> hm = new HashMap<String, String>();
-                                hm.put("HotelRecordId", jobj.getString("HotelRecordId"));
-                                hm.put("AccommodationTypeTitle", jobj.getString("AccommodationTypeTitle"));
-                                hm.put("Name", jobj.getString("Name"));
-                                hm.put("CityName", jobj.getString("CityName"));
-                                hm.put("Address", jobj.getString("Address"));
-                                hm.put("PhoneNo", jobj.getString("PhoneNo"));
-                                hm.put("EmailAddress", jobj.getString("EmailAddress"));
-                                hm.put("Logo", jobj.getString("Logo"));
-                                hm.put("ProfilePic", jobj.getString("ProfilePic"));
-                                hm.put("Star", jobj.getString("Star"));
-
-                                Array_city_hotels.add(hm);
-
-                                if (dialog != null) {
-                                    if (dialog.isShowing())
-                                        dialog.dismiss();
-                                }
-                                CitiesNearByHotelsAdapter adap = new CitiesNearByHotelsAdapter(activity, Array_city_hotels);
-                                Helper.getListViewSize(lvNearHotels);
-                                lvNearHotels.setAdapter(adap);
+//                                if (dialog != null) {
+//                                    if (dialog.isShowing())
+//                                        dialog.dismiss();
+//                                }
+//                                CitiesNearByHotelsAdapter adap = new CitiesNearByHotelsAdapter(activity, Array_details);
+//                                Helper.getListViewSize(lvbeachdetails);
+//                                lvbeachdetails.setAdapter(adap);
 
 
-                            }
+
                             if (dialog != null) {
                                 if (dialog.isShowing())
                                     dialog.dismiss();

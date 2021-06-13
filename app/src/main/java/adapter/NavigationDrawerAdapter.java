@@ -17,9 +17,7 @@ import java.util.List;
 
 import hacks.beachapp.NavDrawerItem;
 
-/**
- * Created by User on 2/16/2017.
- */
+
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder> {
     List<NavDrawerItem> data = Collections.emptyList();
     private LayoutInflater inflater;

@@ -59,7 +59,6 @@ public class EventsAdapter extends ArrayAdapter<HashMap<String, String>> impleme
         viewHolder.tag = (TextView) view.findViewById(R.id.tag);
         viewHolder.ivhotel_home = (ImageView) view.findViewById(R.id.ivhotel_home);
         viewHolder.llview=(LinearLayout)view.findViewById(R.id.llview);
-        viewHolder.flgoDown=(FrameLayout)view.findViewById(R.id.flgoDown);
         viewHolder.tvtitle_home=(TextView)view.findViewById(R.id.tvtitle_home);
         viewHolder.tvLocation=(TextView)view.findViewById(R.id.tvLocation);
 
@@ -118,9 +117,7 @@ public class EventsAdapter extends ArrayAdapter<HashMap<String, String>> impleme
         public TextView tag,tvtitle_home,tvLocation;
         ImageView ivhotel_home,newtag;
         LinearLayout llview;
-        FrameLayout flgoDown;
-//        TextView tvFlat,tvTypeOfRent,tvAddress,tvSize,tvInfo,tvAmount,tvViewDetails,tvViews,tvApplied;
-//        ImageView ivItemImage;
+
     }
 
 }

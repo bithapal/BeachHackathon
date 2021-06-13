@@ -25,9 +25,7 @@ import java.util.Map;
 
 import Common.Constants;
 
-/**
- * Created by User on 3/6/2017.
- */
+
 public class FragmentSignUp extends Fragment {
     View view;
     EditText etEmail, etpassword, etFirstName, etlastname;

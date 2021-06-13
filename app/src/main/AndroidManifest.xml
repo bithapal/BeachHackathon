@@ -53,10 +53,6 @@
             android:label="@string/title_activity_city_details"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="hacks.beachapp.MoreAboutLocation"
-            android:label="@string/title_activity_more_about_location"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -70,10 +66,6 @@
             android:name="hacks.beachapp.WriteReview"
             android:label="@string/title_activity_write_review"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="hacks.beachapp.ActivityBookLast"
-            android:label="@string/title_activity_activity_book_last"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

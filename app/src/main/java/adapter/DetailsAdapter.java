@@ -17,9 +17,7 @@ import java.util.LinkedList;
 
 import hacks.beachapp.ActivityBooking;
 
-/**
- * Created by User on 2/22/2017.
- */
+
 public class DetailsAdapter extends ArrayAdapter<HashMap<String, String>> {
 
     private final Activity context;

@@ -27,42 +27,17 @@ import Common.Constants;
 import adapter.AllItemsAdapter;
 import adapter.EventsAdapter;
 
-/**
- * Created by User on 8/8/2017.
- */
 public class FragmentEvents extends Fragment implements AbsListView.OnScrollListener {
     View view;
     Context context;
-    ListView lvFeatured;
+//    ListView lvFeatured;
     LinkedList<HashMap<String, String>> Array_items_general;
-    int i=10;
-    private int preLast;
-    int j=0;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_featured, container, false);
         context = getContext();
-        lvFeatured=(ListView)view.findViewById(R.id.lvFeatured);
+//        lvFeatured=(ListView)view.findViewById(R.id.lvFeatured);
         getgeneralitems();
-        lvFeatured.setOnScrollListener(new AbsListView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
 
-            }
-
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-//                Log.e("last pos",""+lvFeatured.getLastVisiblePosition());
-//                Log.e("int i",""+i);
-
-                if (lvFeatured.getLastVisiblePosition()+1 == i) {
-                    i = i + 10;
-                    j=j+10;
-                    getgeneralitems();
-
-
-                }
-            }
-        });
 
         return view;
     }
@@ -72,7 +47,7 @@ public class FragmentEvents extends Fragment implements AbsListView.OnScrollList
         dialog.setCancelable(false);
         dialog.show();
         Array_items_general = new LinkedList<HashMap<String, String>>();
-        String url = Constants.baseurl+"HomeApi/get?page="+i;
+        String url = Constants.baseurl+"GetBeachEvents/"+1;
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -81,54 +56,42 @@ public class FragmentEvents extends Fragment implements AbsListView.OnScrollList
                     public void onResponse(String response) {
                         Log.e("homefeaturedurl", response + "");
                         try {
-                            if (!Array_items_general.equals(null)) {
-                                Array_items_general.clear();
-                            }
-                            JSONArray jarr = new JSONArray(response);
-
-                            for (int i = 0; i < jarr.length(); i++) {
-
-                                JSONObject jobj = jarr.getJSONObject(i);
-                                if (dialog != null)
-                                    if (dialog.isShowing())
-                                        dialog.dismiss();
-                                HashMap<String, String> hm = new HashMap<String, String>();
-                                //  hm.put("title", jobj.getString("title"));
-                                hm.put("HotelRecordId", jobj.getString("HotelRecordId"));
-                                hm.put("AccommodationType", jobj.getString("AccommodationType"));
-                                hm.put("Name", jobj.getString("Name"));
-                                hm.put("ImageURL", jobj.getString("ImageURL"));
-                                hm.put("Location", jobj.getString("Location"));
-                                hm.put("Star", jobj.getString("Star"));
-                                hm.put("StartingPrice", jobj.getString("StartingPrice"));
-
-                                Array_items_general.add(hm);
-
+//                            if (!Array_items_general.equals(null)) {
+//                                Array_items_general.clear();
+//                            }
+//                            JSONArray jarr = new JSONArray(response);
+//
+//                            for (int i = 0; i < jarr.length(); i++) {
+//
+//                                JSONObject jobj = jarr.getJSONObject(i);
+//                                if (dialog != null)
+//                                    if (dialog.isShowing())
+//                                        dialog.dismiss();
+//                                HashMap<String, String> hm = new HashMap<String, String>();
+//                                //  hm.put("title", jobj.getString("title"));
+//                                hm.put("HotelRecordId", jobj.getString("HotelRecordId"));
+//                                hm.put("AccommodationType", jobj.getString("AccommodationType"));
+//                                hm.put("Name", jobj.getString("Name"));
+//                                hm.put("ImageURL", jobj.getString("ImageURL"));
+//                                hm.put("Location", jobj.getString("Location"));
+//                                hm.put("Star", jobj.getString("Star"));
+//                                hm.put("StartingPrice", jobj.getString("StartingPrice"));
+//
+//                                Array_items_general.add(hm);
+//
                                 if (dialog != null) {
                                     if (dialog.isShowing())
                                         dialog.dismiss();
                                 }
-                                int currentPosition = lvFeatured.getSelectedItemPosition()-lvFeatured.getFirstVisiblePosition();
-                                EventsAdapter adap = new EventsAdapter(getActivity(), Array_items_general);
-                                adap.notifyDataSetChanged();
-                                lvFeatured.invalidateViews();
-                                lvFeatured.setAdapter(adap);
-                                Log.e("currentposition",""+currentPosition);
-
-                                lvFeatured.setSelection(currentPosition+j);
-//                                if (i == 10) {
-//                                    lvFeatured.setSelection(currentPosition);
-//                                    Log.e("if condition","whn i is 10");
+//                                int currentPosition = lvFeatured.getSelectedItemPosition()-lvFeatured.getFirstVisiblePosition();
+//                                EventsAdapter adap = new EventsAdapter(getActivity(), Array_items_general);
+//                                adap.notifyDataSetChanged();
+//                                lvFeatured.invalidateViews();
+//                                lvFeatured.setAdapter(adap);
 //
-//                                } else {
-//                                    lvFeatured.setSelection(currentPosition);
-//                                    Log.e("else condition","whn i is more than 10");
-//                                }
-
-
-
-                            }
-                        } catch (JSONException e) {
+//
+//                            }
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
@@ -161,20 +124,6 @@ public class FragmentEvents extends Fragment implements AbsListView.OnScrollList
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
-//                int lastItem = firstVisibleItem + visibleItemCount;
-//
-//                if(lastItem == totalItemCount)
-//                {
-//                    if(preLast!=lastItem)
-//                    {
-//                        //to avoid multiple calls for last item
-//                        Log.e("Last", "Last");
-//                        preLast = lastItem;
-//                        i=i+1;
-//                        getgeneralitems();
-//                    }
-//
-//        }
 
     }
 }
