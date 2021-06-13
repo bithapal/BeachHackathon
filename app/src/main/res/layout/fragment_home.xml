@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/svHome"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ss" />
+
+                <FrameLayout
+                    android:id="@+id/flTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Find Beaches"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/FlTitlecity"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/flTitle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="City And Area"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/Flentertext"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/FlTitlecity"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/white">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:id="@+id/spCityArea"
+                        android:background="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" ></EditText>
+                    <!--<EditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@null"-->
+                    <!--android:focusable="false"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:hint="Enter City And Area"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:textStyle="bold" />-->
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/pricerange"
+                    android:layout_width="200dp"
+                    android:paddingTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Flentertext">
+
+
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/pricerange">
+
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="162dp"
+                        android:layout_height="43dp"
+                        android:gravity="center"
+                        android:text="Sort by rating:"
+                        android:textColor="@color/darkgreen"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/flStar"
+                    android:layout_below="@+id/Flentertext"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/pricerange">
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/spStar"
+                        android:background="@android:color/white"></Spinner>
+                </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/select"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/flStar"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@+id/pricerange"
+                    android:background="@color/yellow">
+                    <!--<com.andexert.library.RippleView-->
+                    <!--android:id="@+id/ripplesearch"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--app:rv_color="@color/darkgreen"-->
+                    <!--app:rv_rippleDuration="120"-->
+                    <!--rv_centered="true">-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Search"
+                        android:id="@+id/tvSearch"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <!--</com.andexert.library.RippleView>-->
+                </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ListView
+                android:id="@+id/lvHomedata"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
