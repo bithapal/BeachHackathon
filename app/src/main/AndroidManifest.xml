@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hacks.beachapp.beachapp">
+
+    <permission
+        android:name="info.androidhive.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="info.androidhive.googlemapsv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ohohotels_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="hacks.beachapp.LandingActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_landing"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="hacks.beachapp.HotelDetails"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_hotel_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="hacks.beachapp.ActivityBooking"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_activity_booking"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="hacks.beachapp.BeachDetails"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_city_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="hacks.beachapp.MoreAboutLocation"
+            android:label="@string/title_activity_more_about_location"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAfBinjlnUL52KnTnaUfR3nyniPdeXVdLY" />
+
+        <activity
+            android:name="hacks.beachapp.TermsAndConditions"
+            android:label="@string/title_activity_terms_and_conditions"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="hacks.beachapp.WriteReview"
+            android:label="@string/title_activity_write_review"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="hacks.beachapp.ActivityBookLast"
+            android:label="@string/title_activity_activity_book_last"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

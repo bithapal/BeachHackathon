@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <LinearLayout
+        android:id="@+id/llicin"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ivicon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:layout_gravity="center"
+           />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@+id/llicin"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:text="gdgdsgsg"
+        android:textSize="16sp" />
+</RelativeLayout>
